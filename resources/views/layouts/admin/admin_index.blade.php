@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6 col-12">
+            {{-- <div class="col-xl-6 col-12">
                 <div class="box bg-info bg-img" style="background-image: url(../images/gallery/bg-1.png)">
                     <div class="box-body text-center">							
                         <img src="../images/trophy.png" class="mt-50" alt="" />
@@ -478,5 +478,5 @@
     </section>
     <!-- /.content -->
   </div>
-</div>
+</div> --}}
 @endsection

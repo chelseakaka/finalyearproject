@@ -173,10 +173,12 @@ class EmployeeController extends Controller
                     ->leftJoin('assign_employees','users.id', '=','assign_employees.employee_id')
                     ->leftJoin('employee_salary_logs','users.id', '=','employee_salary_logs.employee_id')
                     ->leftJoin('employee_leaves','users.id', '=','employee_leaves.employee_id')
+                    ->leftJoin('employee_attendances','users.id', '=','employee_attendances.employee_id')
                     ->where('users.id', $employee_id); 
         DB::table('assign_employees')->where('employee_id', $employee_id)->delete(); 
         DB::table('employee_salary_logs')->where('employee_id', $employee_id)->delete(); 
-        DB::table('employee_leaves')->where('employee_id', $employee_id)->delete();      
+        DB::table('employee_leaves')->where('employee_id', $employee_id)->delete(); 
+        DB::table('employee_attendances')->where('employee_id', $employee_id)->delete();      
 
         $data->delete();
 

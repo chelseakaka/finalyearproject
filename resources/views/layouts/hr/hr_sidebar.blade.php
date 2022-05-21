@@ -105,6 +105,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('employee.salary.view')}}"><i class="ti-more"></i>Employee Salary</a></li>
+            <li><a href="{{ route('employee.monthly.salary')}}"><i class="ti-more"></i>Employee Monthly Salary</a></li>
           </ul>
         </li>	
         @endif

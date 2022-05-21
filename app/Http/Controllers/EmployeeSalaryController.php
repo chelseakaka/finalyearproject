@@ -17,13 +17,13 @@ class EmployeeSalaryController extends Controller
     public function ViewSalary(){
         $data['allData'] = User::where('role', 'Employee') -> get();
 
-        return view ('hrweb.employee.employee_salary_view', $data);
+        return view ('hrweb.employee.salary.employee_salary_view', $data);
     }
 
     public function SalaryIncrement($employee_id){
         $data['editData'] = User::find($employee_id);
 
-        return view ('hrweb.employee.employee_salary_increment', $data);
+        return view ('hrweb.employee.salary.employee_salary_increment', $data);
     }
 
     public function StoreSalary(Request $request, $employee_id){
@@ -53,6 +53,6 @@ class EmployeeSalaryController extends Controller
         $data['details'] = User::find($id);
         $data['salary_log'] = EmployeeSalaryLog::where('employee_id', $data['details'] -> id) -> get();
 
-        return view('hrweb.employee.employee_salary_details', $data);
+        return view('hrweb.employee.salary.employee_salary_details', $data);
     }
 }

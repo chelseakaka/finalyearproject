@@ -11,6 +11,7 @@ use App\Http\Controllers\EmployeeSalaryController;
 use App\Http\Controllers\EmployeeLeaveController;
 use App\Http\Controllers\EmployeeClaimController;
 use App\Http\Controllers\EmployeeAttendanceController;
+use App\Http\Controllers\MonthlySalaryController;
 
 
 /*
@@ -100,6 +101,11 @@ Route::prefix('salary') -> group(function(){
     Route::get('employee/increment/{employee_id}', [EmployeeSalaryController::class, 'SalaryIncrement']) -> name('employee.salary.increment');
     Route::post('employee/store/{employee_id}', [EmployeeSalaryController::class, 'StoreSalary']) -> name('update.increment.store');
     Route::get('employee/details/{employee_id}', [EmployeeSalaryController::class, 'SalaryDetails']) -> name('employee.salary.details');
+
+// Employee Monthly Salary
+    Route::get('employee/monthly/view', [MonthlySalaryController::class, 'ViewMonthlySalary']) -> name('employee.monthly.salary');
+    Route::get('employee/monthly/get', [MonthlySalaryController::class, 'MonthlySalaryGet']) -> name('employee.monthly.salary.get');
+    Route::get('employee/monthly/payslip/{employee_id}', [MonthlySalaryController::class, 'MonthlySalaryPaySlip']) -> name('employee.monthly.salary.payslip');
 });
 
 Route::prefix('leave') -> group(function(){
@@ -110,7 +116,7 @@ Route::prefix('leave') -> group(function(){
     Route::post('employee/store/{id}', [EmployeeLeaveController::class, 'StoreLeave']) -> name('store.leave.application');
     Route::get('employee/delete/{employee_id}', [EmployeeLeaveController::class, 'DeleteLeave']) -> name('employee.leave.delete');
 
-// Attemdance 
+// Attendance 
     Route::get('employee/view', [EmployeeLeaveController::class, 'ViewLeave']) -> name('employee.attendance.view');
 
 // Admin Employee Leave

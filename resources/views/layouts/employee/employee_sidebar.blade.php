@@ -120,6 +120,20 @@
             <li><a href="{{ route('employee.leave.apply')}}"><i class="ti-more"></i>Apply Leave</a></li>
           </ul>
         </li>	
+
+        <li class="treeview {{ ($prefix == '/claim')?'active':'' }} ">
+          <a href="#">
+            <i data-feather="mail"></i> <span>Claims</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('employee.claim.myclaim')}}"><i class="ti-more"></i>View My Claims</a></li>
+            <li><a href="{{ route('employee.claim.status')}}"><i class="ti-more"></i>View All Employee Claims</a></li>
+            <li><a href="{{ route('employee.claim.apply')}}"><i class="ti-more"></i>Apply Claims</a></li>
+          </ul>
+        </li>	
 		 
         <li class="header nav-small-cap">User Interface</li>
 		  

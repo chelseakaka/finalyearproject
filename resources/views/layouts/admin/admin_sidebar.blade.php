@@ -100,6 +100,7 @@
             {{-- <li><a href="{{ route('employee.registration.view')}}"><i class="ti-more"></i>View All Employees</a></li>
             <li><a href="{{ route('employee.registration.add')}}"><i class="ti-more"></i>Add Employee</a></li> --}}
             <li><a href="{{ route('employee.salary.view')}}"><i class="ti-more"></i>Employee Salary</a></li>
+            <li><a href="{{ route('employee.monthly.salary')}}"><i class="ti-more"></i>Employee Monthly Salary</a></li>
             {{-- <li><a href="{{ route('employee.leave.myleave')}}"><i class="ti-more"></i>View My Leave</a></li>
             <li><a href="{{ route('employee.leave.status')}}"><i class="ti-more"></i>View All Employee Leave</a></li>
             <li><a href="{{ route('employee.leave.apply')}}"><i class="ti-more"></i>Apply Leave</a></li> --}}
