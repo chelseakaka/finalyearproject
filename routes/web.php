@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeSalaryController;
 use App\Http\Controllers\EmployeeLeaveController;
 use App\Http\Controllers\EmployeeClaimController;
+use App\Http\Controllers\EmployeeAttendanceController;
 
 
 /*
@@ -109,11 +110,23 @@ Route::prefix('leave') -> group(function(){
     Route::post('employee/store/{id}', [EmployeeLeaveController::class, 'StoreLeave']) -> name('store.leave.application');
     Route::get('employee/delete/{employee_id}', [EmployeeLeaveController::class, 'DeleteLeave']) -> name('employee.leave.delete');
 
+// Attemdance 
+    Route::get('employee/view', [EmployeeLeaveController::class, 'ViewLeave']) -> name('employee.attendance.view');
+
 // Admin Employee Leave
     Route::get('employee/viewall', [EmployeeLeaveController::class, 'ViewAllLeave']) -> name('employee.leave.viewall');
     Route::get('employee/view/status', [EmployeeLeaveController::class, 'ViewLeaveAdmin']) -> name('employee.leave.status');
     Route::post('employee/approve/{employee_id}', [EmployeeLeaveController::class, 'ApproveLeave']) -> name('employee.approve_leave');
     Route::post('employee/decline/{employee_id}', [EmployeeLeaveController::class, 'DeclineLeave']) -> name('employee.decline_leave');
+});
+
+Route::prefix('attendance') -> group(function(){
+// Attemdance 
+    Route::get('employee/view', [EmployeeAttendanceController::class, 'ViewAttendance']) -> name('employee.attendance.view');
+    Route::get('employee/add', [EmployeeAttendanceController::class, 'AddAttendance']) -> name('employee.attendance.add');
+    Route::post('employee/store', [EmployeeAttendanceController::class, 'StoreAttendance']) -> name('store.employee.attendance');
+    Route::get('employee/edit/{date}', [EmployeeAttendanceController::class, 'EditAttendance']) -> name('employee.attendance.edit');
+    Route::get('employee/details/{date}', [EmployeeAttendanceController::class, 'AttendanceDetails']) -> name('employee.attendance.details');
 });
 
 Route::prefix('claim') -> group(function(){

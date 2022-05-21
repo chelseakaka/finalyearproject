@@ -125,6 +125,9 @@
             <li><a href="{{ route('employee.leave.status')}}"><i class="ti-more"></i>View All Employee Leave</a></li>
             @endif
             <li><a href="{{ route('employee.leave.apply')}}"><i class="ti-more"></i>Apply Leave</a></li>
+            <li class="treeview {{ ($prefix == '/attendance')?'active':'' }} ">
+            <li><a href="{{ route('employee.attendance.view')}}"><i class="ti-more"></i>Employee Attendance</a></li>
+            </li>
           </ul>
         </li>	
 
