@@ -12,6 +12,7 @@ use App\Http\Controllers\EmployeeLeaveController;
 use App\Http\Controllers\EmployeeClaimController;
 use App\Http\Controllers\EmployeeAttendanceController;
 use App\Http\Controllers\MonthlySalaryController;
+use App\Http\Controllers\AttendanceReport;
 
 
 /*
@@ -157,6 +158,12 @@ Route::prefix('profile') -> group(function(){
     // Route::post('/store', [ProfileController::class, 'StoreProfile']) -> name('profile.store');
     Route::get('/password/view', [ProfileController::class, 'ViewPassword']) -> name('password.view');
     Route::post('/password/update', [ProfileController::class, 'UpdatePassword']) -> name('password.update');
+});
+
+// Attendance Report
+Route::prefix('reports') -> group(function(){
+    Route::get('attendance/view', [AttendanceReport::class, 'AttendanceReportView']) -> name('attendance.report.view');
+    Route::get('attendance/get', [AttendanceReport::class, 'GetAttendanceReport']) -> name('report.attendance.get');
 });
 
 });

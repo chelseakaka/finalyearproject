@@ -107,7 +107,7 @@ $totalattend = App\Models\EmployeeAttendance::with(['user'])->where($where)->whe
 
 <hr style="border: dashed 2px; width: 95%; color: #000000; margin-bottom: 50px">
 
-<table id="customers">
+{{-- <table id="customers">
   <tr>
     <th width="10%">Sl</th>
     <th width="45%">Employee Details</th>
@@ -144,7 +144,7 @@ $totalattend = App\Models\EmployeeAttendance::with(['user'])->where($where)->whe
    
 </table>
 <br> <br>
-  <i style="font-size: 10px; float: right;">Print Data : {{ date("d M Y") }}</i>
+  <i style="font-size: 10px; float: right;">Print Data : {{ date("d M Y") }}</i> --}}
 
  
 
