@@ -13,6 +13,7 @@ use App\Http\Controllers\EmployeeClaimController;
 use App\Http\Controllers\EmployeeAttendanceController;
 use App\Http\Controllers\MonthlySalaryController;
 use App\Http\Controllers\AttendanceReport;
+use App\Http\Controllers\FeedbackController;
 
 
 /*
@@ -94,6 +95,9 @@ Route::prefix('workers') -> group(function(){
     Route::post('/register/employee/update/{employee_id}', [EmployeeController::class, 'UpdateEmployee']) -> name('update.employee.registration');
     Route::get('/register/employee/details/{employee_id}', [EmployeeController::class, 'EmployeeDetails']) -> name('employee.registration.details');
     Route::get('register/delete/{employee_id}', [EmployeeController::class, 'DeleteEmployee']) -> name('employee.registration.delete');
+
+// View Employee for Employee
+    Route::get('view/employee', [EmployeeController::class, 'ViewEmployeeForEmployee']) -> name('employee.view');
 });
 
 Route::prefix('salary') -> group(function(){
@@ -138,7 +142,7 @@ Route::prefix('attendance') -> group(function(){
 
 Route::prefix('claim') -> group(function(){
 // Employee Claims
-        Route::get('employee/view', [EmployeeClaimController::class, 'ViewLClaim']) -> name('employee.claim.view');
+        Route::get('employee/view', [EmployeeClaimController::class, 'ViewClaim']) -> name('employee.claim.view');
         Route::get('employee/myclaim', [EmployeeClaimController::class, 'MyClaim']) -> name('employee.claim.myclaim');
         Route::get('employee/apply', [EmployeeClaimController::class, 'ApplyClaim']) -> name('employee.claim.apply');
         Route::post('employee/store/{id}', [EmployeeClaimController::class, 'StoreClaim']) -> name('store.claim.application');
@@ -152,7 +156,7 @@ Route::prefix('claim') -> group(function(){
     });
 
 Route::prefix('profile') -> group(function(){
-    // Route::get('/view/{employee_id}', [ProfileController::class, 'ViewProfile']) -> name('profile.view');
+    Route::get('/view', [ProfileController::class, 'ViewProfile']) -> name('profile.view');
     // Route::get('/view', [ProfileController::class, 'ViewProfile']) -> name('profile.view');
     // Route::get('/edit', [ProfileController::class, 'EditProfile']) -> name('profile.edit');
     // Route::post('/store', [ProfileController::class, 'StoreProfile']) -> name('profile.store');
@@ -164,6 +168,15 @@ Route::prefix('profile') -> group(function(){
 Route::prefix('reports') -> group(function(){
     Route::get('attendance/view', [AttendanceReport::class, 'AttendanceReportView']) -> name('attendance.report.view');
     Route::get('attendance/get', [AttendanceReport::class, 'GetAttendanceReport']) -> name('report.attendance.get');
+});
+
+// Feedback 
+Route::prefix('feedback') -> group(function(){
+    Route::get('view', [FeedbackController::class, 'ViewFeedback']) -> name('employee.feedback.view');
+    Route::get('write', [FeedbackController::class, 'WriteFeedback']) -> name('employee.feedback.write');
+    Route::post('store/{employee_id}', [FeedbackController::class, 'StoreFeedback']) -> name('store.feedback');
+    Route::get('delete/{employee_id}', [FeedbackController::class, 'DeleteFeedback']) -> name('employee.feedback.delete');
+    
 });
 
 });

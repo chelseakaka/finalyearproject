@@ -1,5 +1,5 @@
-@extends('layouts.admin.admin_master')
-@section('admin')
+@extends('layouts.employee.employee_master')
+@section('employee')
 
 <div class="content-wrapper">
     <div class="container-full">

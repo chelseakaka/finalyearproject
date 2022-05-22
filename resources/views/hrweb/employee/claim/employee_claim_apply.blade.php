@@ -1,5 +1,5 @@
-@extends('layouts.hr.hr_master')
-@section('hr')
+@extends('layouts.employee.employee_master')
+@section('employee')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <div class="content-wrapper">
@@ -45,6 +45,14 @@
                             </div>
                             <div class="col-12">
                                 <div class = "row">
+                                    <div class = "col-md-6">
+                                        <div class="form-group">
+                                            <h5> Amount To Claim <span class="text-danger">*</span></h5>
+                                                <div class="controls">
+                                                    <input type="text" name="claim_amount" class="form-control"> 
+                                                </div>
+                                        </div>  
+                                    </div>
                                     <div class = "col-md-6">
                                         <div class="form-group">
                                             <h5> Claim Purpose <span class="text-danger">*</span></h5>

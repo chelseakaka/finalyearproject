@@ -18,8 +18,8 @@
                   <a href = "" style = "float:right;" class = "btn btn-rounded btn-success mb-5"> Edit Profile </a>
                   {{-- {{ route('profile.edit')}} --}}
                   @endif
-                  <h6 class="widget-user-desc">Role : {{ $user->role }}</h6>
-	                <h6 class="widget-user-desc">Email : {{ $user->email }}</h6>
+                  <h1 class="widget-user-desc">Role : {{ $user->role }}</h1>
+	                <h1 class="widget-user-desc">Email : {{ $user->email }}</h1>
                 </div>
                 <div class="widget-user-image">
                   <img class="rounded-circle" src="{{ (!empty( $user -> image))? url('upload/employee_images/'.$user -> image):url('upload/no_image.jpg') }}" alt="User Avatar">

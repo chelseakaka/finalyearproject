@@ -14,7 +14,9 @@ class AdminController extends Controller
     }
 
     public function ViewUsers(){
-        $allUser = User::all();
+        $allUser = User::where('role','=','Admin')
+        ->orWhere('role','=','HR') -> get();
+        
         return view('adminweb.viewUser', compact('allUser'));
     }
 

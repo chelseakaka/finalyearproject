@@ -53,7 +53,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a target = "_BLANK" href = "{{ route('employee.registration.details', $employee -> id)}}"> <i class="ti-more"></i> My Details </a></li>
+              {{-- <li><a target = "_BLANK" href = "{{ route('employee.registration.details', $employee -> id)}}"> <i class="ti-more"></i> My Details </a></li> --}}
+              <li><a href = "{{ route('profile.view', $employee -> id)}}"> <i class="ti-more"></i> My Details </a></li>
               <li><a href="{{ route('password.view')}}"><i class="ti-more"></i>Change Password</a></li>
             </ul>
           </li>		
@@ -138,6 +139,19 @@
             <li><a href="{{ route('employee.claim.myclaim')}}"><i class="ti-more"></i>View My Claims</a></li>
             <li><a href="{{ route('employee.claim.status')}}"><i class="ti-more"></i>View All Employee Claims</a></li>
             <li><a href="{{ route('employee.claim.apply')}}"><i class="ti-more"></i>Apply Claims</a></li>
+          </ul>
+        </li>	
+
+        <li class="treeview {{ ($prefix == '/feedback')?'active':'' }} ">
+          <a href="#">
+            <i data-feather="mail"></i> <span>Feedback</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            {{-- <li><a href="{{ route('employee.feedback.write')}}"><i class="ti-more"></i>Write Feedback</a></li> --}}
+            <li><a href="{{ route('employee.feedback.view')}}"><i class="ti-more"></i>View All Feedback</a></li>
           </ul>
         </li>	
 		 

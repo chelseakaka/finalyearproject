@@ -55,6 +55,14 @@
         @yield('admin')
     
         {{-- Footer --}}
+        <style>
+          .main-footer {
+              position: fixed;
+              padding: 10px 30px 0px 10px;
+              bottom: 0;
+              width: 100%;
+          }
+        </style>
         @if (Auth::user() -> role == 'Admin')
         @include('layouts.admin.admin_footer')
 

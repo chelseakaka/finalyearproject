@@ -32,6 +32,7 @@
                               <th>ID No</th>
                               <th>Purpose</th>
                               <th>Claim Date</th>
+                              <th>Amount Claimed</th>
                               <th>Status</th>
                               <th width = "25%">Action</th>
                           </tr>
@@ -46,6 +47,7 @@
                               <td>{{ $claim['user']['id_no'] }}</td>
                               <td>{{ $claim['purpose']['name'] }}</td>
                               <td>{{ $claim -> claim_date }}</td>
+                              <td>{{ $claim -> claim_amount }}</td>
                               <td>{{ $claim -> status }}</td>
                               <td>  
                                     <a href = "{{ route('employee.claim.delete', $claim->id)}}" class = "btn btn-danger" id = "delete"> Delete </a>  

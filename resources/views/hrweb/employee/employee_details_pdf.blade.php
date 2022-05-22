@@ -62,7 +62,7 @@
   <tr>
     <td>1</td>
     <td><b>Employee Name</b></td>
-    <td>{{ $details -> name}}</td>
+    <td>{{ $details['Employee']['name']}}</td>
   </tr>
   <tr>
     <td>2</td>

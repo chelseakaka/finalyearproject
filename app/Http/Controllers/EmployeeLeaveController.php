@@ -37,7 +37,7 @@ class EmployeeLeaveController extends Controller
 
     public function ApproveLeave(Request $request, $id){
         $approve = EmployeeLeave::find($id);
-        $approve -> status = 'Successful';
+        $approve -> status = 'Approved';
         $approve -> save();
 
         $data['allData'] = EmployeeLeave::orderBy('id', 'desc') -> get();

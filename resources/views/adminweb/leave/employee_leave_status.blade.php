@@ -45,11 +45,11 @@
                               <td>{{ $leave -> start_date }}</td>
                               <td>{{ $leave -> end_date }}</td>
                               <td>
-                                @if ($leave -> status == 'Successful')
+                                @if ($leave -> status == 'Approved')
                                 Approve
                                 @elseif ($leave -> status == 'Unsuccessful')
                                 Declined
-                                @elseif ($leave -> status == 'Ongoing')
+                                @elseif ($leave -> status == 'Pending')
                               <form action = "{{ route('employee.approve_leave', $leave->id)}}" method="POST" >
                                 @csrf
                                 <button type="submit" value="{{$leave->id}}" name="employee_id" class = "btn btn-rounded btn-info mb-5" id = "approve">Approve</button>

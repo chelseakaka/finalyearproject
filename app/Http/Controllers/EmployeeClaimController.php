@@ -38,7 +38,7 @@ class EmployeeClaimController extends Controller
 
     public function ApproveClaim(Request $request, $id){
         $approve = EmployeeClaim::find($id);
-        $approve -> status = 'Successful';
+        $approve -> status = 'Approved';
         $approve -> save();
 
         $data['allData'] = EmployeeClaim::orderBy('id', 'desc') -> get();
@@ -76,6 +76,7 @@ class EmployeeClaimController extends Controller
         $data = new EmployeeClaim();
         $data -> employee_id = Auth::user() -> id;
         $data -> claim_purpose_id = $claim_purpose_id;
+        $data -> claim_amount = $request -> claim_amount;
         $data -> claim_date = date('Y-m-d', strtotime($request -> claim_date)); 
         $data -> save();
 

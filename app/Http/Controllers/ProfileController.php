@@ -11,25 +11,23 @@ use PDF;
 
 class ProfileController extends Controller
 {
-    // public function ViewProfile(){
-    //     $id = Auth::user() -> id;
-    //     $user = User::find($id);
+    public function ViewProfile(){
+        $id = Auth::user() -> id;
+        $user = User::find($id);
 
-    //     $user['allData'] = AssignEmployee::where('employee_id', $user['id']) -> where('employee_id', $user['id']) -> get();
-    //     // $user['allData'] = AssignEmployee::with(['Employee']) -> where('employee_id', $employee_id) -> first();        
-    //     // $user['details'] = AssignEmployee::with(['Employee']) -> where('employee_id', $employee_id) -> first();
+        $user['allData'] = AssignEmployee::where('employee_id', $user['id']) -> where('employee_id', $user['id']) -> get();
 
-    //     return view('employee.my_profile', compact('user')); 
-    // }
-
-    public function ViewProfile($employee_id){
-        $data['details'] = AssignEmployee::with(['Employee']) -> where('employee_id', $employee_id) -> first();
-
-        $pdf = PDF::loadview('hrweb.employee.employee_details_pdf', $data);
-        $pdf -> setProtection(['copy', 'print'], '', 'pass');
-
-        return $pdf -> stream('document.pdf');
+        return view('employee.my_profile', compact('user')); 
     }
+
+    // public function ViewProfile($employee_id){
+    //     $data['details'] = AssignEmployee::with(['Employee']) -> where('employee_id', $employee_id) -> first();
+
+    //     $pdf = PDF::loadview('hrweb.employee.employee_details_pdf', $data);
+    //     $pdf -> setProtection(['copy', 'print'], '', 'pass');
+
+    //     return $pdf -> stream('document.pdf');
+    // }
 
     public function ViewPassword(){
         return view('employee.edit_password');

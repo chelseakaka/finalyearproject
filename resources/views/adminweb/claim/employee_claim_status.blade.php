@@ -31,6 +31,7 @@
                               <th>ID No</th>
                               <th>Purpose</th>
                               <th>Claim Date</th>
+                              <th>Amount Claimed</th>
                               <th width = "25%">Action</th>
                           </tr>
                       </thead>
@@ -42,12 +43,13 @@
                               <td>{{ $claim['user']['id_no'] }}</td>
                               <td>{{ $claim['purpose']['name'] }}</td>
                               <td>{{ $claim -> claim_date }}</td>
+                              <td>{{ $claim -> claim_amount }}</td>
                               <td>
-                                @if ($claim -> status == 'Successful')
+                                @if ($claim -> status == 'Approved')
                                 Approve
                                 @elseif ($claim -> status == 'Unsuccessful')
                                 Declined
-                                @elseif ($claim -> status == 'Ongoing')
+                                @elseif ($claim -> status == 'Pending')
                               <form action = "{{ route('employee.approve_claim', $claim->id)}}" method="POST" >
                                 @csrf
                                 <button type="submit" value="{{$claim->id}}" name="employee_id" class = "btn btn-rounded btn-info mb-5" id = "approve">Approve</button>

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('leave_purpose_id');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('status') -> default('Ongoing');
+            $table->string('status') -> default('Pending');
             $table->timestamps();
         });
     }

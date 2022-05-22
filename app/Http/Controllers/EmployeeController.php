@@ -17,9 +17,15 @@ use PDF;
 class EmployeeController extends Controller
 {
     public function ViewEmployee(){
-        $data['allData'] = User::all();
+        $data['allData'] = User::all() -> where('role', 'Employee');
 
         return view('hrweb.employee.view_employee', $data);
+    }
+
+    public function ViewEmployeeForEmployee(){
+        $data['allData'] = User::all() -> where('role', 'Employee');
+
+        return view('hrweb.employee.employee_view_for_employee', $data);
     }
 
     public function AddEmployee(){

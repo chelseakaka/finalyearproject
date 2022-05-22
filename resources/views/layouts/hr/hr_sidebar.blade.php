@@ -147,7 +147,21 @@
             <li><a href="{{ route('employee.claim.apply')}}"><i class="ti-more"></i>Apply Claims</a></li>
           </ul>
         </li>	
+
+        <li class="treeview {{ ($prefix == '/feedback')?'active':'' }} ">
+          <a href="#">
+            <i data-feather="mail"></i> <span>Feedback</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('employee.feedback.write')}}"><i class="ti-more"></i>Write Feedback</a></li>
+            {{-- <li><a href="{{ route('employee.claim.status')}}"><i class="ti-more"></i>View All Employee Claims</a></li> --}}
+          </ul>
+        </li>
 		 
+        @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
         <li class="header nav-small-cap">Reports Interface</li>
 		  
         <li class="treeview {{ ($prefix == '/reports')?'active':'' }} ">
@@ -161,6 +175,7 @@
             <li><a href="{{ route('attendance.report.view')}} "> <i class="ti-more"></i> Employee Attendance Report </a></li>
           </ul>
         </li>	
+        @endif
         
       </ul>
     </section>
