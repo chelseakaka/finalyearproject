@@ -15,11 +15,11 @@
                   <h3 class="widget-user-username" style = "text-align:center;">{{ $user['employee']}}</h3>
                   {{-- <h6 class="widget-user-desc" style = "text-align:center;">{{ $user -> role}}</h6> --}}
                   @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
-                  <a href = "" style = "float:right;" class = "btn btn-rounded btn-success mb-5"> Edit Profile </a>
+                  {{-- <a href = "" style = "float:right;" class = "btn btn-rounded btn-success mb-5"> Edit Profile </a> --}}
                   {{-- {{ route('profile.edit')}} --}}
                   @endif
-                  <h1 class="widget-user-desc">Role : {{ $user->role }}</h1>
-	                <h1 class="widget-user-desc">Email : {{ $user->email }}</h1>
+                  <h3 class="widget-user-desc">Role : {{ $user->role }}</h3>
+	                <h3 class="widget-user-desc">Email : {{ $user->email }}</h3>
                 </div>
                 <div class="widget-user-image">
                   <img class="rounded-circle" src="{{ (!empty( $user -> image))? url('upload/employee_images/'.$user -> image):url('upload/no_image.jpg') }}" alt="User Avatar">

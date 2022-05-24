@@ -13,6 +13,8 @@ use App\Models\EmployeeSalaryLog;
 use App\Models\EmployeeLeave;
 use DB;
 use PDF;
+use App\Mail\SendEmail;
+use Illuminate\Support\Facades\Mail;
 
 class EmployeeController extends Controller
 {
@@ -90,6 +92,8 @@ class EmployeeController extends Controller
                 $data['image'] = $filename;
             }
             $data -> save();
+
+            Mail::to($data->email)->send(new SendEmail($data));
 
             $employee_salary  = new EmployeeSalaryLog();
             $employee_salary -> employee_id = $data -> id;

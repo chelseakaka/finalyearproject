@@ -56,7 +56,7 @@
                               </form>
                               <form action = "{{ route('employee.decline_leave', $leave->id)}}" method="POST" >
                                 @csrf
-                                <button onclick = "Are you sure you want to delete?" type="submit" value="{{$leave->id}}" name="employee_id" class = "btn btn-rounded btn-info mb-5" id = "decline">Decline</button>
+                                <button type="submit" value="{{$leave->id}}" name="employee_id" class = "btn btn-rounded btn-info mb-5" id = "decline">Decline</button>
                               </form>
                               @endif
                             </td>

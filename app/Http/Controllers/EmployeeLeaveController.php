@@ -14,6 +14,9 @@ use App\Models\LeavePurpose;
 use DB;
 use PDF;
 use Auth;
+use App\Mail\ApproveLeave;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Notifications\Notifiable;
 
 class EmployeeLeaveController extends Controller
 {
@@ -36,11 +39,27 @@ class EmployeeLeaveController extends Controller
     }
 
     public function ApproveLeave(Request $request, $id){
+        // $data = User::get($employee_id);
         $approve = EmployeeLeave::find($id);
         $approve -> status = 'Approved';
         $approve -> save();
 
-        $data['allData'] = EmployeeLeave::orderBy('id', 'desc') -> get();
+        $data['allData'] = EmployeeLeave::orderBy('id', 'desc') -> get();     
+
+        // $data['details'] = User::with(['Employee']) -> where('id', $id) -> select('email') -> first();
+        // $data = DB::table('users')
+        //     ->join('employee_leaves', 'employee_leaves.employee_id', '=', 'users.id')
+        //     ->where($id = 'users.id')
+        //     ->select('users.email')
+        //     ->first();
+        // $data -> email = 'users.email';
+
+        // Mail::to($data -> email)->send(new ApproveLeave($data));
+
+        // $data = DB::table('users')->where('id', $approve->id)->first();
+        // $data -> email = $request -> email;
+
+        // Mail::to($data -> email)->send(new ApproveLeave());
 
         return view('adminweb.leave.employee_leave_status', $data);
     }

@@ -125,10 +125,10 @@ Route::prefix('leave') -> group(function(){
     Route::get('employee/view', [EmployeeLeaveController::class, 'ViewLeave']) -> name('employee.attendance.view');
 
 // Admin Employee Leave
-    Route::get('employee/viewall', [EmployeeLeaveController::class, 'ViewAllLeave']) -> name('employee.leave.viewall');
+    // Route::get('employee/viewall', [EmployeeLeaveController::class, 'ViewAllLeave']) -> name('employee.leave.viewall');
     Route::get('employee/view/status', [EmployeeLeaveController::class, 'ViewLeaveAdmin']) -> name('employee.leave.status');
-    Route::post('employee/approve/{employee_id}', [EmployeeLeaveController::class, 'ApproveLeave']) -> name('employee.approve_leave');
-    Route::post('employee/decline/{employee_id}', [EmployeeLeaveController::class, 'DeclineLeave']) -> name('employee.decline_leave');
+    Route::post('employee/approve/{id}', [EmployeeLeaveController::class, 'ApproveLeave']) -> name('employee.approve_leave');
+    Route::post('employee/decline/{id}', [EmployeeLeaveController::class, 'DeclineLeave']) -> name('employee.decline_leave');
 });
 
 Route::prefix('attendance') -> group(function(){

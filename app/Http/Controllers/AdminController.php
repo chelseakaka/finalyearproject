@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\Models\User;
+use App\Mail\SendUser;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 
@@ -39,6 +41,8 @@ class AdminController extends Controller
         $data -> password = bcrypt($code);
         $data -> code = $code;
         $data -> save();
+
+        Mail::to($data -> email)->send(new SendUser($data));
 
         $notification = array(
             'message' => 'User Added Successfully',
