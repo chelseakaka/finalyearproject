@@ -49,7 +49,7 @@
         @endphp
         <li class="treeview {{ ($prefix == '/profile')?'active':'' }} ">
             <a href="#">
-              <i data-feather="mail"></i> <span>Manage Profile</span>
+              <i data-feather="folder"></i> <span>Manage Profile</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-right pull-right"></i>
               </span>
@@ -63,7 +63,7 @@
 
           <li class="treeview {{ ($prefix == '/workers')?'active':'' }} ">
             <a href="#">
-              <i data-feather="mail"></i> <span>Employee List</span>
+              <i data-feather="folder"></i> <span>Employee List</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-right pull-right"></i>
               </span>
@@ -75,7 +75,7 @@
 
         <li class="treeview {{ ($prefix == '/leave')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Leave</span>
+            <i data-feather="folder"></i> <span>Leave</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -88,7 +88,7 @@
 
         <li class="treeview {{ ($prefix == '/claim')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Claims</span>
+            <i data-feather="folder"></i> <span>Claims</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -102,7 +102,7 @@
 
         <li class="treeview {{ ($prefix == '/feedback')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Feedback</span>
+            <i data-feather="folder"></i> <span>Feedback</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -132,12 +132,12 @@
       </ul>
     </section>
 	
-	<div class="sidebar-footer">
+	{{-- <div class="sidebar-footer">
 		<!-- item-->
 		<a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
 		<!-- item-->
 		<a href="mailbox_inbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ti-email"></i></a>
 		<!-- item-->
 		<a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ti-lock"></i></a>
-	</div>
+	</div> --}}
   </aside>

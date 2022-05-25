@@ -34,8 +34,8 @@
 <table id="customers">
   <tr>
    <td><h2>
-  <?php $image_path = '/upload/easyschool.png'; ?>
-  <img src="{{ public_path() . $image_path }}" width="200" height="100">
+  <?php $image_path = '/upload/uniten.jpg'; ?>
+  <img src="{{ public_path() . $image_path }}" width="210" height="100">
 
     </h2></td>
     <td><h2>Company Name</h2>

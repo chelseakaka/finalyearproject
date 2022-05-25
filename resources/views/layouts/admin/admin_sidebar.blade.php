@@ -47,7 +47,7 @@
         @endphp
         <li class="treeview {{ ($prefix == '/profile')?'active':'' }} ">
             <a href="#">
-              <i data-feather="mail"></i> <span>Manage Profile</span>
+              <i data-feather="folder"></i> <span>Manage Profile</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-right pull-right"></i>
               </span>
@@ -61,7 +61,7 @@
           
         <li class="treeview {{ ($prefix == '/setups')?'active':'' }} ">
             <a href="#">
-              <i data-feather="mail"></i> <span>Setup</span>
+              <i data-feather="folder"></i> <span>Setup</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-right pull-right"></i>
               </span>
@@ -75,7 +75,7 @@
 
         <li class="treeview {{ ($prefix == '/workers')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Employee Management</span>
+            <i data-feather="dollar-sign"></i> <span>Employee Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -92,7 +92,7 @@
 
         <li class="treeview {{ ($prefix == '/salary')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Salary</span>
+            <i data-feather="folder"></i> <span>Salary</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -110,7 +110,7 @@
 
         <li class="treeview {{ ($prefix == '/leave')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Leave</span>
+            <i data-feather="folder"></i> <span>Leave</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -119,9 +119,9 @@
             {{-- <li><a href="{{ route('employee.registration.view')}}"><i class="ti-more"></i>View All Employees</a></li>
             <li><a href="{{ route('employee.registration.add')}}"><i class="ti-more"></i>Add Employee</a></li> --}}
             {{-- <li><a href="{{ route('employee.salary.view')}}"><i class="ti-more"></i>Employee Salary</a></li> --}}
-            <li><a href="{{ route('employee.leave.myleave')}}"><i class="ti-more"></i>View My Leave</a></li>
+            {{-- <li><a href="{{ route('employee.leave.myleave')}}"><i class="ti-more"></i>View My Leave</a></li> --}}
             <li><a href="{{ route('employee.leave.status')}}"><i class="ti-more"></i>View All Employee Leave</a></li>
-            <li><a href="{{ route('employee.leave.apply')}}"><i class="ti-more"></i>Apply Leave</a></li>
+            {{-- <li><a href="{{ route('employee.leave.apply')}}"><i class="ti-more"></i>Apply Leave</a></li> --}}
             <li class="treeview {{ ($prefix == '/attendance')?'active':'' }} ">
             <li><a href="{{ route('employee.attendance.view')}}"><i class="ti-more"></i>Employee Attendance</a></li>
             </li>
@@ -130,21 +130,21 @@
 
         <li class="treeview {{ ($prefix == '/claim')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Claims</span>
+            <i data-feather="folder"></i> <span>Claims</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('employee.claim.myclaim')}}"><i class="ti-more"></i>View My Claims</a></li>
+            {{-- <li><a href="{{ route('employee.claim.myclaim')}}"><i class="ti-more"></i>View My Claims</a></li> --}}
             <li><a href="{{ route('employee.claim.status')}}"><i class="ti-more"></i>View All Employee Claims</a></li>
-            <li><a href="{{ route('employee.claim.apply')}}"><i class="ti-more"></i>Apply Claims</a></li>
+            {{-- <li><a href="{{ route('employee.claim.apply')}}"><i class="ti-more"></i>Apply Claims</a></li> --}}
           </ul>
         </li>	
 
         <li class="treeview {{ ($prefix == '/feedback')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Feedback</span>
+            <i data-feather="folder"></i> <span>Feedback</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -159,7 +159,7 @@
 		  
         <li class="treeview {{ ($prefix == '/reports')?'active':'' }} ">
           <a href="#">
-            <i data-feather="mail"></i> <span>Report Management</span>
+            <i data-feather="folder"></i> <span>Report Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -172,12 +172,12 @@
       </ul>
     </section>
 	
-	<div class="sidebar-footer">
+	{{-- <div class="sidebar-footer">
 		<!-- item-->
 		<a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
 		<!-- item-->
 		<a href="mailbox_inbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ti-email"></i></a>
 		<!-- item-->
 		<a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ti-lock"></i></a>
-	</div>
+	</div> --}}
   </aside>

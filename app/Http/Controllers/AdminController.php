@@ -40,6 +40,13 @@ class AdminController extends Controller
         $data -> email = $request -> email;
         $data -> password = bcrypt($code);
         $data -> code = $code;
+
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/employee_images'),$filename);
+            $data['image'] = $filename;
+        }
         $data -> save();
 
         Mail::to($data -> email)->send(new SendUser($data));

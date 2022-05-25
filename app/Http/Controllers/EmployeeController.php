@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Mail;
 class EmployeeController extends Controller
 {
     public function ViewEmployee(){
-        $data['allData'] = User::all() -> where('role', 'Employee');
+        $data['allData'] = DB::table('users') -> where('role', 'Employee') -> orderBy('joineddate', 'asc') -> get();
 
         return view('hrweb.employee.view_employee', $data);
     }
@@ -93,7 +93,7 @@ class EmployeeController extends Controller
             }
             $data -> save();
 
-            Mail::to($data->email)->send(new SendEmail($data));
+            // Mail::to($data->email)->send(new SendEmail($data));
 
             $employee_salary  = new EmployeeSalaryLog();
             $employee_salary -> employee_id = $data -> id;
