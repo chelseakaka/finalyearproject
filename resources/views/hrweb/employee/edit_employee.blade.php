@@ -27,7 +27,7 @@
                                         <div class="form-group">
                                             <h5> Full Name <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <input type="text" name="name" class="form-control" required data-validation-required-message="This field is required" value = "{{ $editData['employee']['name']}}"> </div>
+                                                <input type="text" name="name" class="form-control" required data-validation-required-message="This field is required" value = "{{ $editData['employee']['name']}}" readonly> </div>
                                         </div>
                                     </div>
                                     <div class = "col-md-6">

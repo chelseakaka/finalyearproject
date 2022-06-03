@@ -40,7 +40,7 @@
                               @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
                             {{-- @if (Auth::user() -> role == 'Admin') --}}
                            
-                              <th width = "">Action</th>
+                              <th width = "20%">Action</th>
                               @endif
                           </tr>
                       </thead>

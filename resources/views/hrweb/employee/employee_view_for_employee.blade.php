@@ -28,21 +28,11 @@
                           <tr>
                               <th width = "5%">SL</th>
                               <th>Name</th>
-                              {{-- <th>ID No</th> --}}
                               <th>Email</th>
                               <th>Gender</th>
                               <th>Date of Birth</th>
                               <th>Join Date</th>
-                              {{-- <th>Salary(RM)</th> --}}
-                              {{-- @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
-                              <th>Code</th>
-                              @endif --}}
                               <th>Image</th>
-                              {{-- <th>Salary(RM)</th>
-                              <th>Joined Date</th>
-                              <th>Bank Account No</th>
-                              <th>Marital Status</th>
-                              <th>Reporting To</th> --}}
                               @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
                               <th width = "20%">Action</th>
                               @endif
@@ -53,15 +43,11 @@
                           <tr>
                               <td>{{ $key+1 }}</td>
                               <td>{{ $employee -> name }}</td>
-                              {{-- <td>{{ $employee -> id_no }}</td> --}}
+
                               <td>{{ $employee -> email }}</td>
                               <td>{{ $employee -> gender }}</td>
                               <td>{{ $employee -> dob }}</td>
                               <td>{{ date('d-m-Y', strtotime($employee -> joineddate)) }}</td>
-                              {{-- <td>{{ $employee -> salary }}</td> --}}
-                              {{-- @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
-                              <td>{{ $employee -> code }}</td>
-                              @endif --}}
                               <td><img id = "showImage" src = "{{ (!empty( $employee -> image))? url('upload/employee_images/'.$employee -> image):url('upload/no_image.jpg') }}" style = "width : 100px; height : 100px; border : 1px solid black;"></td>
                               @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
                               <td> <a href = "{{ route('employee.registration.edit', $employee -> id) }}" class = "btn btn-info"> Edit </a> 

@@ -98,7 +98,7 @@
         @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
         <li class="treeview {{ ($prefix == '/salary')?'active':'' }} ">
           <a href="#">
-            <i data-feather="folder"></i></i> <span>Salary</span>
+            <i data-feather="dollar-sign"></i></i> <span>Salary</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -125,9 +125,15 @@
             @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
             <li><a href="{{ route('employee.leave.status')}}"><i class="ti-more"></i>View All Employee Leave</a></li>
             @endif
+            @if (Auth::user() -> role == 'Employee')
+            <li><a href="{{ route('employee.leave.apply')}}"><i class="ti-more"></i>Apply Leave</a></li>
+            <li><a href="{{ route('employee.leave.myleave')}}"><i class="ti-more"></i>View My Leave</a></li>
+            @endif
             {{-- <li><a href="{{ route('employee.leave.apply')}}"><i class="ti-more"></i>Apply Leave</a></li> --}}
+            @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
             <li class="treeview {{ ($prefix == '/attendance')?'active':'' }} ">
             <li><a href="{{ route('employee.attendance.view')}}"><i class="ti-more"></i>Employee Attendance</a></li>
+            @endif
             </li>
           </ul>
         </li>	
@@ -156,7 +162,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('employee.feedback.write')}}"><i class="ti-more"></i>Write Feedback</a></li>
+            <li><a href="{{ route('employee.feedback.view')}}"><i class="ti-more"></i>View All Feedback</a></li>
             {{-- <li><a href="{{ route('employee.claim.status')}}"><i class="ti-more"></i>View All Employee Claims</a></li> --}}
           </ul>
         </li>

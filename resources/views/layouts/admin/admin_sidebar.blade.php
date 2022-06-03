@@ -75,7 +75,7 @@
 
         <li class="treeview {{ ($prefix == '/workers')?'active':'' }} ">
           <a href="#">
-            <i data-feather="dollar-sign"></i> <span>Employee Management</span>
+            <i data-feather="folder"></i> <span>Employee Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -92,7 +92,7 @@
 
         <li class="treeview {{ ($prefix == '/salary')?'active':'' }} ">
           <a href="#">
-            <i data-feather="folder"></i> <span>Salary</span>
+            <i data-feather="dollar-sign"></i> <span>Salary</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>

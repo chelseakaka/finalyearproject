@@ -184,12 +184,15 @@ class EmployeeController extends Controller
                     ->leftJoin('employee_salary_logs','users.id', '=','employee_salary_logs.employee_id')
                     ->leftJoin('employee_leaves','users.id', '=','employee_leaves.employee_id')
                     ->leftJoin('employee_attendances','users.id', '=','employee_attendances.employee_id')
+                    ->leftJoin('employee_claims','users.id', '=','employee_claims.employee_id')
+                    ->leftJoin('employee_feedback','users.id', '=','employee_feedback.employee_id')
                     ->where('users.id', $employee_id); 
         DB::table('assign_employees')->where('employee_id', $employee_id)->delete(); 
         DB::table('employee_salary_logs')->where('employee_id', $employee_id)->delete(); 
         DB::table('employee_leaves')->where('employee_id', $employee_id)->delete(); 
-        DB::table('employee_attendances')->where('employee_id', $employee_id)->delete();      
-
+        DB::table('employee_attendances')->where('employee_id', $employee_id)->delete();    
+        DB::table('employee_claims')->where('employee_id', $employee_id)->delete();   
+        DB::table('employee_feedback')->where('employee_id', $employee_id)->delete();      
         $data->delete();
 
             $notification = array(

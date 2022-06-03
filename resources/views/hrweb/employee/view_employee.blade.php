@@ -37,11 +37,6 @@
                               <th>Code</th>
                               @endif
                               <th>Image</th>
-                              {{-- <th>Salary(RM)</th>
-                              <th>Joined Date</th>
-                              <th>Bank Account No</th>
-                              <th>Marital Status</th>
-                              <th>Reporting To</th> --}}
                               @if (Auth::user() -> role == 'Admin' || Auth::user() -> role == 'HR')
                               <th width = "20%">Action</th>
                               @endif

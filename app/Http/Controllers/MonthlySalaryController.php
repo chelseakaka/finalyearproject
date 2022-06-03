@@ -106,7 +106,7 @@ class MonthlySalaryController extends Controller
     
             $html[$key]['tdsource'] .='<td>'.$totalsalary.'</td>';
             $html[$key]['tdsource'] .='<td>';
-            $html[$key]['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("employee.monthly.salary.payslip",$attend->employee_id).'">Fee Slip</a>';
+            $html[$key]['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("employee.monthly.salary.payslip",$attend->employee_id).'">Pay Slip</a>';
             $html[$key]['tdsource'] .= '</td>';
     
         }  
